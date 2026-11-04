@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NerdZero — Tech news in 30 seconds</title>
+<meta name="description" content="NerdZero: tech news in 30 seconds. Phones, laptops, AI and gadgets — every launch, leak and price drop, as daily reels on Instagram and Shorts on YouTube.">
+<meta name="theme-color" content="#06070b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2306070b'/%3E%3Cpath d='M21.5 8.5a9 9 0 1 1-11 0' fill='none' stroke='%233fe8ee' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 5v9' stroke='%233fe8ee' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://srikarsudarshans.github.io/">
+<meta property="og:image" content="https://srikarsudarshans.github.io/brand_logo.jpg">
+<meta name="twitter:image" content="https://srikarsudarshans.github.io/brand_logo.jpg">
+<meta property="og:site_name" content="NerdZero">
+<meta property="og:title" content="NerdZero — Tech news in 30 seconds">
+<meta property="og:description" content="Phones, laptops, AI and gadgets. Every launch, leak and price drop, explained before your coffee cools. New reels every day.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NerdZero — Tech news in 30 seconds">
+<meta name="twitter:description" content="Phones, laptops, AI and gadgets. Every launch, leak and price drop, explained before your coffee cools. New reels every day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fustat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06070b; --ink:#f2f8f9; --dim:rgba(242,248,249,.62); --faint:rgba(242,248,249,.38);
+  --cyan:#3fe8ee; --glow:#6ffbfc; --deep:#0aa3b0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:"Inter",system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* page wrapper + background glow */
+.wrap{position:relative;min-height:100vh;overflow:hidden}
+.glow{position:absolute;inset:0;pointer-events:none;z-index:0}
+.glow i{position:absolute;border-radius:50%;filter:blur(120px)}
+.glow i:nth-child(1){width:780px;height:520px;left:-260px;top:-260px;background:#3fe8ee;opacity:.22}
+.glow i:nth-child(2){width:560px;height:420px;left:-80px;top:-120px;background:#0aa3b0;opacity:.28;filter:blur(90px)}
+.glow i:nth-child(3){width:340px;height:260px;left:120px;top:-60px;background:#6ffbfc;opacity:.12;filter:blur(70px)}
+.grain{position:absolute;inset:0;z-index:0;opacity:.035;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+.main{position:relative;z-index:10;max-width:1600px;margin:0 auto;padding:0 48px}
+
+/* liquid glass navbar */
+.navwrap{position:sticky;top:30px;z-index:50;display:flex;justify-content:center;pointer-events:none}
+nav{pointer-events:auto;width:fit-content;display:flex;align-items:center;gap:40px;padding:10px 10px 10px 22px;
+  background:rgba(255,255,255,.06);backdrop-filter:blur(50px) saturate(140%);-webkit-backdrop-filter:blur(50px) saturate(140%);
+  border:1px solid rgba(255,255,255,.12);border-radius:16px;
+  box-shadow:inset 0 4px 4px 0 rgba(255,255,255,.08),0 10px 40px -10px rgba(0,0,0,.6)}
+.logo img{height:26px;display:block}
+.links{display:flex;gap:30px;font:500 14px/1 "Inter";color:var(--dim)}
+.links a{transition:color .2s}.links a:hover{color:var(--ink)}
+.navbtns{display:flex;gap:8px}
+.glassbtn{display:inline-flex;align-items:center;gap:10px;padding:10px 12px 10px 16px;border-radius:12px;font:500 14px/1 "Inter";
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 4px 4px 0 rgba(255,255,255,.1);
+  transition:background .25s,transform .25s}
+.glassbtn:hover{background:rgba(63,232,238,.14);transform:scale(1.02)}
+.glassbtn svg{width:16px;height:16px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;min-height:calc(100vh - 220px);padding-top:90px}
+.left{max-width:640px}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 10px;border-radius:999px;font:500 14px/1 "Inter";color:var(--dim);
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 2px 3px rgba(255,255,255,.06)}
+.badge .live{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 0 rgba(63,232,238,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,232,238,.55)}70%{box-shadow:0 0 0 9px rgba(63,232,238,0)}100%{box-shadow:0 0 0 0 rgba(63,232,238,0)}}
+.badge b{color:var(--ink);font-weight:600}
+h1{margin-top:28px;font:700 75px/1.05 "Fustat",sans-serif;letter-spacing:-2px}
+h1 span{background:linear-gradient(92deg,#6ffbfc,#3fe8ee 45%,#0aa3b0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:26px;max-width:520px;font:400 18px/1.5 "Inter";letter-spacing:-1px;color:var(--dim)}
+.ctas{margin-top:40px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.cta{display:inline-flex;align-items:center;gap:14px;padding:8px 8px 8px 24px;border-radius:16px;font:600 16px/1 "Inter";color:#03161a;
+  background:rgba(63,232,238,.88);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);
+  box-shadow:inset 0 4px 4px 0 rgba(255,255,255,.35),0 12px 40px -8px rgba(63,232,238,.45);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.cta:hover{transform:scale(1.02);box-shadow:inset 0 4px 4px 0 rgba(255,255,255,.35),0 16px 50px -6px rgba(63,232,238,.6)}
+.cta .ic{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.cta .ic svg{width:18px;height:18px}
+.ghost{font:500 15px/1 "Inter";color:var(--dim);display:inline-flex;align-items:center;gap:8px;transition:color .2s}
+.ghost:hover{color:var(--ink)}
+.stats{margin-top:44px;display:flex;gap:36px}
+.stats div{font:700 26px/1 "Fustat";letter-spacing:-.5px}
+.stats small{display:block;margin-top:6px;font:500 12px/1 "Inter";color:var(--faint);letter-spacing:0}
+
+.right{position:relative;display:flex;justify-content:center;align-items:center;aspect-ratio:1/1;max-height:760px}
+#orb{width:100%;height:100%;transform:scale(1.25) translateX(4%);display:block}
+
+/* coverage strip */
+.trusted{position:relative;z-index:10;max-width:1600px;margin:0 auto;padding:40px 48px 70px;text-align:center}
+.trusted p{font:500 14px/1 "Inter";color:var(--faint)}
+.brands{margin-top:30px;display:flex;justify-content:center;align-items:center;gap:100px;flex-wrap:wrap;row-gap:28px}
+.brands{display:grid!important;grid-template-columns:repeat(5,auto);justify-content:center;column-gap:100px}
+.brands .b{font:700 24px/1 "Fustat";letter-spacing:-.5px;color:rgba(242,248,249,.42);filter:grayscale(1);transition:color .25s;display:flex;flex-direction:column;align-items:center;gap:8px}
+.brands em{font:500 11px/1 "Inter";font-style:normal;letter-spacing:.02em;color:rgba(242,248,249,.3)}
+.brands .b:hover em{color:var(--cyan)}
+.brands .b:hover{color:var(--ink)}
+
+
+
+.cats{margin-top:30px;display:flex;justify-content:center;align-items:center;gap:100px;flex-wrap:wrap;row-gap:24px}
+.cat{display:inline-flex;align-items:center;gap:12px;font:700 26px/1 "Fustat";letter-spacing:-.5px;color:rgba(242,248,249,.5);transition:color .25s}
+.cat svg{width:26px;height:26px;color:var(--cyan);opacity:.75;transition:opacity .25s}
+.cat:hover{color:var(--ink)}.cat:hover svg{opacity:1}
+.ptabs{display:inline-flex;margin:0 0 26px;border-radius:12px;padding:4px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+.ptabs button{font:500 13px/1 "Inter";color:var(--dim);background:none;border:0;padding:10px 14px;border-radius:9px;cursor:pointer}
+.ptabs button.on{background:rgba(255,255,255,.1);color:var(--ink)}
+.rc .src{display:flex;gap:8px;align-items:center}
+.rc .pf{font:600 11px/1 "Inter";letter-spacing:.04em;padding:5px 9px;border-radius:999px;color:var(--ink);background:rgba(255,255,255,.08)}
+.rc .pf.yt{color:#ff6b6b;background:rgba(255,80,80,.12)}
+.rc .pf.ig{color:#f5a3ff;background:rgba(220,120,255,.12)}
+@media (max-width:1100px){.cats{gap:56px}}
+/* brand pages */
+.brands .b{cursor:pointer;text-decoration:none}
+.bview{position:relative;z-index:10;padding:150px 0 40px}
+.back{display:inline-flex;font:500 14px/1 "Inter";color:var(--dim);padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:color .2s}
+.back:hover{color:var(--ink)}
+.bhead{margin-top:34px;display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}
+.bhead h2{font:700 75px/1.05 "Fustat";letter-spacing:-2px}
+.bhead p{font:500 16px/1 "Inter";color:var(--cyan)}
+.bswitch{margin:30px 0 10px;display:flex;flex-wrap:wrap;gap:16px 48px}
+.bswitch a{display:inline-flex;align-items:center;gap:10px;font:700 20px/1 "Fustat";letter-spacing:-.3px;color:rgba(242,248,249,.42);transition:color .2s}
+.bswitch a svg{width:20px;height:20px;color:var(--cyan);opacity:.6}
+.bswitch a:hover{color:var(--ink)}
+.bswitch a.on{color:var(--ink)}.bswitch a.on svg{opacity:1}
+.sech{margin:44px 0 18px;font:600 13px/1 "Inter";letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.rc{display:flex;flex-direction:column;gap:12px;padding:22px;border-radius:16px;min-height:220px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 4px 4px rgba(255,255,255,.04);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,background .3s}
+.rc:hover{transform:translateY(-3px) scale(1.01);border-color:rgba(63,232,238,.45);background:rgba(63,232,238,.06)}
+.rc .k{align-self:flex-start;font:600 11px/1 "Inter";letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);padding:5px 9px;border-radius:999px;background:rgba(63,232,238,.1)}
+.rc h3{font:700 20px/1.2 "Fustat";letter-spacing:-.4px}
+.rc p{font:400 14px/1.5 "Inter";color:var(--dim);flex:1}
+.rc .w{font:500 13px/1 "Inter";color:var(--ink);display:flex;align-items:center;gap:8px}
+.rc .w i{width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center;font-style:normal;color:#0aa3b0;font-weight:700}
+body.brandmode .hero,body.brandmode .trusted{display:none}
+@media (max-width:900px){.bview{padding:120px 0 30px}.bhead h2{font-size:46px;letter-spacing:-1.5px}.bgrid{grid-template-columns:1fr}}
+
+@media (max-width:1100px){h1{font-size:60px}.brands{column-gap:56px}}
+@media (max-width:900px){
+  .main{padding:0 20px}
+  nav{gap:16px;padding:8px 8px 8px 16px}.links{display:none}
+  .hero{grid-template-columns:1fr;padding-top:60px;gap:0;min-height:0}
+  .right{order:-1;max-width:420px;margin:0 auto;width:100%}
+  #orb{transform:scale(1.1)}
+  h1{font-size:46px;letter-spacing:-1.5px}
+  .sub{font-size:16px;letter-spacing:-.5px}
+  .stats{gap:24px}.badge .more{display:none}
+  .trusted{padding:50px 20px 60px}.cats{gap:22px 40px}.cat{font-size:21px}.cat svg{width:22px;height:22px}.navbtns .glassbtn{padding:9px 10px 9px 12px;font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="glow" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="main">
+    <div class="navwrap">
+      <nav>
+        <a class="logo" href="#"><img src="data:image/png;base64,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" alt="NerdZero"></a>
+        <div class="links"><a href="#">Home</a><a href="https://www.instagram.com/_nerdzero_/" target="_blank" rel="noopener">Reels</a><a href="https://www.youtube.com/@NerdZero-O" target="_blank" rel="noopener">YouTube</a><a href="#cover">Coverage</a></div>
+        <div class="navbtns"><a class="glassbtn" href="https://www.youtube.com/@NerdZero-O?sub_confirmation=1" target="_blank" rel="noopener">Subscribe
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="glassbtn" href="https://www.instagram.com/_nerdzero_/" target="_blank" rel="noopener">Follow
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="left">
+        <div class="badge"><span class="live"></span><b>New reels every day</b><span class="more">· 362 posts and counting</span></div>
+        <h1>Tech news,<br><span>in 30 seconds</span></h1>
+        <p class="sub">Phones, laptops, AI and gadgets. Every launch, leak and price drop, explained before your coffee cools.</p>
+        <div class="ctas">
+          <a class="cta" href="https://www.instagram.com/_nerdzero_/" target="_blank" rel="noopener">Watch the latest reels
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#0aa3b0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a class="ghost" href="https://www.youtube.com/@NerdZero-O" target="_blank" rel="noopener">Also on YouTube ↗</a>
+        </div>
+        <div class="stats"><div>30s<small>per story</small></div><div>194<small>videos: 122 reels + 72 Shorts</small></div><div>4<small>beats: AI · Phones · Laptops · More</small></div></div>
+      </div>
+      <div class="right"><canvas id="orb" aria-hidden="true"></canvas></div>
+    </section>
+  </div>
+
+
+  <section class="bview" id="bview" hidden>
+    <div class="main">
+      <a class="back" href="#cover">← All categories</a>
+      <div class="bhead"><h2 id="bname"></h2><p id="bcount"></p></div>
+      <div class="bswitch" id="bswitch"></div>
+      <h4 class="sech" id="h-ig">Instagram Reels</h4>
+      <div class="bgrid" id="bgrid"></div>
+      <h4 class="sech" id="h-yt">YouTube Shorts</h4>
+      <div class="bgrid" id="ygrid"></div>
+    </div>
+  </section>
+  <section class="trusted" id="cover">
+    <p>What we cover</p>
+    <div class="cats" id="cats"></div>
+  </section>
+</div>
+
+<script>
+/* Glassy orb: original WebGL shader, graded to the NerdZero cyan. Black background, blended with mix-blend-mode: screen. */
+(function(){
+const c=document.getElementById('orb');const gl=c.getContext('webgl',{premultipliedAlpha:true,alpha:true,antialias:true});
+if(!gl){c.style.display='none';return}
+const vs=`attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+const fs=`precision highp float;uniform vec2 R;uniform float T;uniform vec2 M;
+float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+float fbm(vec2 p){float v=0.,a=.5;mat2 r=mat2(.8,.6,-.6,.8);for(int i=0;i<5;i++){v+=a*n(p);p=r*p*2.02+3.1;a*=.5;}return v;}
+void main(){
+  vec2 uv=(gl_FragCoord.xy-.5*R)/min(R.x,R.y);uv-=M*.03;
+  float Rad=.36,r=length(uv);vec3 col=vec3(0.);
+  vec3 deep=vec3(.02,.33,.42),cy=vec3(.25,.91,.93),gl2=vec3(.62,1.,1.),blu=vec3(.05,.45,.95);
+  if(r<Rad){
+    float z=sqrt(1.-pow(r/Rad,2.));vec3 N=normalize(vec3(uv/Rad,z));
+    vec2 q=N.xy/(1.+N.z*.6);float t=T*.18;
+    vec2 w=vec2(fbm(q*2.2+vec2(t,-t*.7)),fbm(q*2.2+vec2(-t*.8,t)+4.));
+    float f=fbm(q*2.6+w*2.4+t*.5);
+    float bands=smoothstep(.35,.95,f);
+    vec3 body=mix(deep*.35,mix(blu,cy,smoothstep(.3,.8,w.x)),bands);
+    body+=gl2*pow(bands,6.)*.9;
+    float fres=pow(1.-z,2.4);
+    body=body*(.35+.65*z)+cy*fres*1.15+gl2*pow(fres,5.)*.8;
+    vec3 L=normalize(vec3(-.45,.55,.7));float spec=pow(max(dot(reflect(-L,N),vec3(0,0,1)),0.),140.);
+    body+=gl2*spec*.55;
+    float caustic=pow(max(0.,1.-length(uv-vec2(.12,-.16))/(Rad*.55)),3.)*.35;body+=cy*caustic;
+    col=body;
+    col*=smoothstep(Rad,Rad-.006,r);
+  }
+  float halo=exp(-max(r-Rad,0.)*9.)*.42+exp(-max(r-Rad,0.)*28.)*.35;
+  halo*=smoothstep(.5,.4,r);col+=cy*halo*(r>=Rad-.004?1.:.0);
+  col=clamp(col,0.,1.);float a=max(col.r,max(col.g,col.b));gl_FragColor=vec4(col,a);
+}`;
+function sh(t,s){const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o}
+const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+const uR=gl.getUniformLocation(pr,'R'),uT=gl.getUniformLocation(pr,'T'),uM=gl.getUniformLocation(pr,'M');
+let mx=0,my=0,tx=0,ty=0;addEventListener('pointermove',e=>{tx=e.clientX/innerWidth*2-1;ty=-(e.clientY/innerHeight*2-1)},{passive:true});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function size(){const d=Math.min(devicePixelRatio,2),w=c.clientWidth*d,h=c.clientHeight*d;if(c.width!==w||c.height!==h){c.width=w;c.height=h;gl.viewport(0,0,w,h)}}
+const t0=performance.now();
+function f(){size();mx+=(tx-mx)*.05;my+=(ty-my)*.05;gl.uniform2f(uR,c.width,c.height);gl.uniform1f(uT,reduce?8.:(performance.now()-t0)/1000);gl.uniform2f(uM,mx,my);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);if(!reduce)requestAnimationFrame(f)}
+f();addEventListener('resize',()=>{if(reduce)f()});
+})();
+</script>
+
+<script>
+const NEWS=[
+["De6hKWciUuE","A","You do not need $4,999 to use AI","The NVIDIA DGX Spark is a desk-sized local AI computer with the GB10 Grace Blackwell chip and 64GB of memory."],
+["De56OEcj-pO","S","iPhone Duo fold test: 32,640 folds and the hinge passed","A robot folded the foldable iPhone Duo 32,640 times over 4 nights, and the crease did not get worse."],
+["De7U9H-jO8c","O","Stop paying for these 3 apps — these websites do it free","Photopea, Squoosh and remove.bg replace paid photo apps right in your browser."],
+["DfVEfZtD6Kx","O","GTA 6 preload starts November 10, and it needs 212GB","Rockstar moved the preload to November 10 for PS5 and Xbox, nine days before the November 19 launch."],
+["DfU6gUrD1-H","S","Samsung Galaxy S26 FE 256GB drops to around ₹62,300 on Amazon","About ₹8,900 off, with a 6.7-inch 120Hz AMOLED screen, a 50MP 3x camera and 7 years of updates."],
+["DfU2Sw4E_3U","L","ASUS ProArt P14 vs P16: which creator laptop is worth it?","Two RTX Spark creator laptops in India: the P14 at ₹3,29,990 and the P16 from ₹4,99,990."],
+["DfUyvQ0k6UR","O","Helumi gives your Mac a 30 TB cloud drive inside Finder","A 50 GB video takes zero bytes on your Mac and still opens in under a second."],
+["DfUwYhdk0C2","O","Sony LinkBuds Clip launches in India at ₹18,990","Open-ear earbuds that clip onto your ear, with 37 hours of total battery and AI call noise cancelling."],
+["DfUmIGPD4Ha","S","POCO X8 launches in the Philippines with a massive 8,340mAh battery","A 6.83-inch 120Hz AMOLED screen, 50MP camera and 67W charging, at around ₹36,800."],
+["DfUbalVjyZ3","O","TCL Note A1 NXTPAPER launches in Australia at around ₹76,000","TCL's first paper-like tablet: an 11.5-inch 2.2K 120Hz paper display and an 8192-level stylus."],
+["DfURYtAjzk8","S","TCL P80 Ultra launches in Australia with a paper-like AMOLED screen","One button flips the 6.83-inch display from colour to paper, with a 5,800mAh battery."],
+["DfUH5PMj8Lr","A","Cyclon AI phone wants to replace your iPhone","A Y Combinator startup's AI phone taps through your apps itself and even builds apps that don't exist yet."],
+["DfTIMDOj02M","S","Motorola Moto G 2026 drops to around ₹22,250 on Amazon","A 6.7-inch 120Hz display, 50MP camera and a 5,200mAh battery rated for up to two days."],
+["DfSgOnnk2mK","O","Peak Design launches four charging accessories, led by a 10.5mm kickstand power bank","The world's first Qi2.3 certified charger, with a 5,000mAh battery at around ₹8,900."],
+["DfSVOIzDwTJ","O","Fortnite Treasure Hunters is live with One Piece","A new 80-player island called Crossbones Isle, live since November 1."],
+["DfSRrXBD7Kv","O","Bambu Lab H3C launches at around ₹2,22,400: 9-tool 3D printer with 6-second swaps","Bambu Lab's first third-generation desktop 3D printer keeps nine print tools loaded and hot."],
+["DfSLfswD4L0","O","Addmotor Cybergen exoskeletons launch in the US: a robot you wear on your legs","Dual 1,000W motors with up to 45 percent assist, from around ₹97,800."],
+["DfSAaEpk3F0","S","RedMagic 12 Pro goes global at around ₹84,500","A gaming phone with a 185Hz screen, an 8,400mAh battery and RGB liquid cooling."],
+["DfR26q-Dlyy","O","Lenovo Xiaoxin Pro 27 Vitality Edition is here: a 13mm thin all-in-one PC","A 27-inch QHD 120Hz all-in-one with an Intel Core 5 chip, from around ₹99,000."],
+["DfRsmV4jwrh","O","JBL Authentics 30 launches in China: 100W retro speaker","Bluetooth 6.0 and 8 hours of battery in a 4.83 kg retro body, around ₹39,600."],
+["DfRixyVD5wD","L","Asus ProArt P16 and P14 launch in India with RTX Spark AI power","The P16 packs a 16-inch 4K OLED touchscreen and up to 128GB of unified memory."],
+["DfQqBSLD5-z","O","Sennheiser Momentum 5 Wireless verdict: 57 hours, and a battery you can swap","₹39,990 headphones with adaptive ANC and a user-replaceable battery."],
+["DfP60XOE-hQ","O","Raspberry Pi 5 16GB jumps to around ₹34,300","A ₹7,100 price rise blamed on the memory shortage — more than triple its launch price."],
+["DfPwR7CDsED","O","Sony FX5 cinema camera launches in India at ₹5,61,990","Full-frame 5K open-gate video at 60fps with internal 16-bit RAW and AI autofocus."],
+["DfPr28bk_s_","S","Samsung Galaxy S25 FE price drop on Flipkart","Down to ₹44,999 (₹40,999 with a bank card) from its ₹59,999 launch price."],
+["DfPnACrkxKO","O","Pebble Qore Vox launches in India at ₹5,799: a screenless band that records your voice","Records meetings from your wrist and turns them into text with AI summaries."],
+["DfPd-RAjvQU","S","Sony Xperia 10 VIII lands in Malaysia at around ₹63,300","Same chip, camera and battery as last year, but around ₹16,900 more."],
+["DfPSjoqD2l_","S","Redmi M100 Pro launches in China at around ₹33,000","A 1.5K OLED, 50MP camera and 5,500mAh battery — specs that match the 2024 Redmi Note 14 Pro."],
+["DfPHZldj323","O","Jackery Explorer 100D: the palm-sized power station with 158 watts out","96Wh in a 1.87 lb box with two 140W USB-C ports, under the carry-on limit."],
+["DfO-PNyj_52","S","Xiaomi 18 Pro goes global this November with two 200MP Leica cameras","A 200MP main camera, a 200MP 5x zoom and a second screen on the back."],
+["DfN_hDJD0Hg","O","Wyze Bulb Cam Pan Color: the light bulb that is also a security camera","A 2.5K pan-and-tilt camera that screws into any light socket, around ₹8,900."],
+["DfNWTm0AiU8","O","Samsung Galaxy Fit 4 leaks in three colours","A taller screen, Bluetooth 5.4 and no built-in GPS, tipped under ₹8,900."],
+["DfNL6tJArnh","S","Karbonn is back: Rebel and Rebel Pro 5G launch in India","Two budget phones with 7,000mAh and 6,000mAh batteries, running clean Android 16."],
+["DfNHNkvE1d4","L","Microsoft Surface Laptop 13 gets a new chip and a higher price","Snapdragon X2 Plus and up to 18 hours of browsing, now around ₹1,06,800."],
+["DfNB6SvE8mQ","O","Apple AirPods Pro 3 drop to around ₹17,700","Early Black Friday deal on twice the noise cancelling of Pro 2, with live translation."],
+["DfM3pWqk1Bo","O","Sony ELF-MN1 brings glasses-free 3D to your desk for around ₹30,300","A 6-inch eye-tracking 3D display that connects to a phone or PC over USB-C."],
+["DfMs6ceE63E","O","Acer Predator Atlas 8 goes on sale in the US at around ₹1,15,700","Acer's first gaming handheld: Intel Arc G3 Extreme, an 8-inch 120Hz screen and 24GB RAM."],
+["DfMjXJ2E4S_","S","Nothing OS 5.0 is rolling out to 4 Nothing phones","The stable Android 17 update for Phone 3a, 3a Pro, 4a and 4a Pro."],
+["DfMZCU3j7JN","O","Apple HomePod mini 2 goes on sale at ₹18,900","The S10 chip drives 360-degree sound, and the top glows with your music."],
+["DfLjZXJj9i-","O","A top oncologist says find the first cancer cell, not the last","Dr. Azra Raza argues early detection is the future of cancer care."],
+["DfLSt3Ej2Z3","S","Nokia 2360 Flip: a flip phone with 15 days of standby and an SOS button","A simple flip phone for grandparents and kids, with remote setup through Family Assist."],
+["DfKqci7j5mr","O","Casio LA680WEM Vintage watches land in the US from around ₹6,200","Retro mesh-band digital watches with a five-year battery."],
+["DfKhx-Qj0jB","S","Google Pixel 11 falls to around ₹62,200 in early Black Friday sale","Around ₹17,800 off — the lowest price ever for the Tensor G6 flagship."],
+["DfKf-5tj51t","O","Fujifilm Instax Square 2 is here, and it changes the mood before you shoot","A Mood Filter Switch for warm, cool or classic square prints, around ₹10,700."],
+["DfKbMvgDzou","L","Asus ExpertBook A7 drops to around ₹80,100 in the US","A cheaper variant with the same 14-inch 120Hz OLED and up to 26 hours of battery."],
+["DfKWD_6jzjp","O","Apple Watch Ultra 4 drops to its lowest price ever","Around ₹62,300 on Amazon, with a 3,000-nit display and satellite SOS."],
+["DfKLxBjE8rq","S","Google Pixel 11 Pro XL drops to around ₹84,500 in early Black Friday sale","Around ₹31,000 off, with Tensor G6 and up to 120x zoom."],
+["DfKAsmtjxDR","S","Samsung Galaxy A07 5G launched in India at ₹15,999","A 6000mAh battery, 50MP camera and 120Hz display."],
+["DfJ3lJvjwtR","O","Evercade Nexus goes on sale with Banjo-Kazooie in the box","A retro handheld that plays every Evercade cartridge ever made, around ₹17,800."],
+["DfJsudvDrNC","O","Apple AirTag 2 4-Pack hits lowest price ever","Around ₹6,200, with Precision Finding that reaches 50 percent farther."],
+["DfIu2Bmj39f","O","Fujifilm instax mini Evo 2: a 4.5-inch touchscreen camera that still prints","A bigger sensor, face-detection autofocus and short movie clips."],
+["DfIF2DdD3su","S","Google Pixel 11 Pro Fold drops to around ₹1,47,000","Its lowest price ever, with an 8-inch folding screen and Tensor G6."],
+["DfH8ZnmD8xz","A","Samsung Galaxy Glasses reportedly land in mid-December","Samsung's first AI smart glasses run Android XR with Gemini and live translation."],
+["DfH3pjJiV_H","O","Bose Lifestyle Ultra Speaker drops to around ₹24,800","An early Black Friday deal on the Wi-Fi smart speaker with TrueSpatial sound."],
+["DfHxYhUiZpX","S","Nothing to launch over 6 phones in 2027","More than twice as many smartphones as it launched this year."],
+["DfHrySGiUyp","O","Binance hacked for 6.3 billion dollars in the biggest theft in history","Drained in about 20 minutes; about 3 billion is frozen and user funds are covered."],
+["DfHngq1jPce","L","Lenovo IdeaPad Slim 3i price cut in half: now around ₹44,400","A 52 percent cut on a 15-inch 120Hz laptop with an Intel Core 5 chip."],
+["DfHb7l8jsn3","O","Ultrahuman Ring Pro hits US stores: 15 days of battery, zero monthly fees","The titanium smart ring is now in 300 Best Buy stores for around ₹42,600."],
+["DfHH84kjkHf","O","Nintendo Switch 2 Zelda 40th Anniversary Edition launches and sells out","Green and gold Joy-Con and a Triforce dock, around ₹46,300."],
+["DfGL8SRD5XT","O","Noise Buds R1 Gaana Edition launched in India at ₹1,399","Earbuds bundled with a free year of Gaana Plus and 40 hours of battery."],
+["DfFhjI1D_XH","S","Samsung Galaxy W27 officially launched in China","A luxury gold foldable with a 200MP camera and satellite calling, from around ₹2,71,455."],
+["DfFWt4Hj_wZ","O","Fairphone Fairbuds 2: the earbuds you can actually fix","Seven replaceable parts, including the batteries, around ₹10,600."],
+["DfFTL5SD_wI","L","HP ProBook 4 G2iS launched early with a 500-nit OLED screen","A 14-inch 3K 120Hz OLED and up to 32GB RAM in a 1.17 kg body."],
+["DfFNarkDqW1","O","GravaStar Mercury Edge Pro: 138-hour gaming headset, around ₹16,000","53mm drivers, THX spatial audio and hybrid noise cancelling."],
+["DfFLEd5jnyB","L","Apple unveils first touchscreen MacBook Pro: from ₹3,49,900 in India","Tandem OLED at 2,000 nits, a Dynamic Island and M5 Pro or M5 Max chips."],
+["DfFB6tdj5zY","O","Logitech MX Master 4 Developer Edition launches in India","A limited edition with laser-etched code symbols on the shell."],
+["DfEuRxlE-np","O","Sony Prism Collection: see-through PS5 controllers are here","Transparent DualSense controllers and console covers, around ₹7,600."],
+["DfEjpXGE_PH","O","Audio-Technica ATH-M50xSTS-WL: first wireless StreamSet at around ₹26,600","M50x studio sound plus a condenser mic on a low-lag 2.4GHz dongle."],
+["DfC7xUJD1Jl","O","REDMI Clip Neo: first clip-on earbuds from Redmi","Open-ear earbuds with 32 hours of total battery, around ₹5,700 in China."],
+["DfCyRrUD7G9","O","LG brings its 115-inch QNED evo TV to India","A 4K Mini LED TV with up to 165Hz VRR, at ₹14,99,990."],
+["DfCtK91j-Jf","L","ASUS Vivobook S14 and S16 launch in Japan with 30-hour battery","Snapdragon X chips and OLED screens; the 14-inch weighs just 1.28 kg."],
+["DfCoIs3E4AV","O","Amazon unveils five new Echo devices led by the Echo Show 16","A 16-inch display with Fire TV built in, around ₹44,500."],
+["DfCdZH6j3FU","O","Alienware AW3226Q: a 32-inch 4K OLED gaming monitor for around ₹62,000","Tandem OLED at 165Hz with 0.03ms response."],
+["DfCSoXxj5vz","S","Samsung Galaxy A08 launches in India at ₹18,499","A 6,000mAh battery and six years of updates — but only 4GB RAM and no 5G."],
+["DfCJhs1D4fR","L","REDMI Book 2027 is here: 14 inch vs 16 inch","A 2.8K 120Hz display at 1.28 kg on the 14-inch; the 16-inch adds a number pad."],
+["DfB_A09CS_x","S","Motorola Moto G47 Power: 78 hours of battery","A 7,000mAh battery, 108MP camera and 120Hz display, around ₹35,600."],
+["DfBgu7Pj_Ao","S","iPhone Duo FAILS JerryRigEverything durability test","Bending killed the inner screen, and dust beat its IP68 rating by jamming the hinge."],
+["DfBgu5fj5Qx","L","MacBook Pro M6 battery deep-dive: 24 hours is the headline","Apple's longest-ever Mac battery rating, with a 12-core CPU."],
+["DfBVgKXj4qq","A","The AI that runs this account just made a reel about itself","Muse, the Meta AI agent behind NerdZero, researches, scripts, voices and edits 9 reels a day."],
+["DfA_6a2j_5H","L","Anduril and Qualcomm unveil BlueChip, a rugged US-built laptop","A hardened Snapdragon X laptop for soldiers and first responders, orders in 2027."],
+["DfAWrjRjmIo","L","Asus Zenbook 14 (2026) India launch date is November 5","Up to 33 hours of battery in a 1.1 kg Ceraluminum body."],
+["DfAMPuJj-2i","O","Samsung Galaxy Buds On go on sale in Korea","Samsung's first clip-on, open-ear earbuds with 9.5 hours per charge."],
+["DfAIejPj6A2","O","Twelve South AirFly View launches at $79.99","Use your own wireless earbuds with plane seatback screens — now with a display."],
+["DfACx4zD_un","L","Apple drops M6 into MacBook Pro and iMac","A 14-inch MacBook Pro with M6 from $1,999, with 30 percent faster graphics."],
+["De_4l5JDk7w","A","Brilliant Labs Halo Glasses launch at $399","Privacy-first AI glasses with a colour micro-OLED and an AI companion called Noa."],
+["De_vDwFDm8Y","O","Google Fitbit Edge hits stores for $179.99","7-day battery, a bigger OLED and built-in GPS that is 40 percent more accurate."],
+["De_keG-DjXS","O","Xiaomi Smart Band 11 lands in Europe for 59.99 euros","A 2000-nit AMOLED and a 21-day battery."],
+["De_ZAPwk-FC","S","POCO X8s goes global at 399 dollars","A compact 6.35-inch phone with a 6330mAh battery and 100W charging."],
+["De-aVZWj9rA","O","Godox A2 puts a real xenon flash on your iPhone for $84.90","A MagSafe flash that syncs up to 1/8000th of a second."],
+["De9paTRE0oH","O","Anker soundcore AeroClip 2 lands in the Philippines","6.2-gram clip-on earbuds with LDAC hi-res audio."],
+["De9i916jAfD","O","New Amazon Fire TV Stick 4K is here for $59.99","HDR10+, Wi-Fi 6 and Alexa+ built in."],
+["De9ey8CjGsz","O","Apple just announced the new iPad mini with OLED","An 8.5-inch OLED, A20 Pro chip and IP67, from $699."],
+["De9U_SUjl3L","A","Realbotix Echo humanoid robots launch from $11,950","A full-body robot at $59,950 and a tabletop version, for 2027 delivery."],
+["De8TCXZjzf4","A","Block's Dessa AI voice sounds eerily human — set a family code word tonight","AI voices now pause like real people. If someone calls asking for money, ask for the word."],
+["De71983j3_S","O","TDM Neo: headphones that twist into a speaker","Four 40mm drivers and over 200 hours of headphone battery, for $249."],
+["De7CTHMkyK0","S","POCO C95 Pro lands in the Philippines","A 7,500mAh battery rated for more than two days, from 11,999 pesos."],
+["De69-dIk8jR","O","Audio-Technica ATH-AWX7000: wooden flagship headphones for $3,799","Kiso cypress earcups and a 58mm Hybrid Matrix driver."],
+["De640p7k31i","L","Dell XPS 16 Creator Edition now on sale direct from Dell","RTX Spark AI power with an 18-core N1X chip, from $3,799.99."],
+["De6uHI3j7PE","O","Logitech Pebble Up: the mouse that changes shape","Lies flat for travel and pops up into a full grip, 90 days per charge."],
+["De6kBX9DD0R","S","Samsung Galaxy Z Fold 8 is up to $580 off at Best Buy","Open-box 512GB units at $1,520; new units $200 off."],
+["De6ZZZHDlmR","O","Roku Pro Series LX OLED TVs now on Amazon","55- and 65-inch OLEDs with a 144Hz screen built for gaming."],
+["De6PJLYDO0Y","L","HP Star Book Air 14 launches with a 42.5-hour battery claim","A 1.16 kg ultrabook with a 14-inch OLED touchscreen."],
+["De5-ZVHj0s8","S","Hidden iPhone feature: Back Tap","Settings → Accessibility → Touch → Back Tap."],
+["De5qOkwDrR4","O","Snap SPECS pre-orders are open: standalone AR glasses from $2,195","Transparent displays and dual Snapdragon chips, with a $200 deposit."],
+["De5QQQqDNbp","O","Samsung Galaxy Tab S12 Ultra: the thinnest Galaxy Tab ever","A 14.6-inch AMOLED at just 5.1mm, with the S Pen in the box."],
+["De4n6G6D8Oo","O","Sigma FP2: the world's smallest full-frame camera","24.5MP with 6K open-gate video, $2,199."],
+["De4eN0gj6K7","A","NVIDIA DGX Spark 64GB goes on sale at $4,999","Runs AI models with up to 100 billion parameters entirely on device."],
+["De4aby8j_vU","O","Samsung Galaxy SmartTag 3 now works with iPhones","35 percent smaller, up to 790 days of battery, $29.99."],
+["De4T1g0j-uW","O","Philips Evnia 36M4C5500P: the world's first 36-inch gaming monitor","A curved ultrawide at 260Hz."],
+["De4JxZuj6eJ","S","Motorola Edge 70 Fusion lands in Japan","A 144Hz AMOLED, 50MP Sony camera and up to 7,000mAh battery."],
+["De3_L9Rj6vA","S","Samsung Galaxy W27: a luxury gold and blue foldable","A luxury take on the Z Fold 8 Ultra, launching in China."],
+["De30mKhjyrM","O","Insta360 Mic: a wireless mic with its own E-Ink display","32-bit float recording to microSD, from $80."],
+["De3q5VsDxjW","O","Alloop Trio: one sensor, two bodies","A health sensor that moves between a wristband by day and a smart ring at night."],
+["De2sPxljgGl","O","XREAL Aura AR glasses now on pre-order","Sony micro-OLED displays and Android XR with Gemini, $1,279."],
+["De12UaZCWFe","O","PlayStation Pulse gets a launch date","Sony's planar magnetic gaming headset lands November 19 for $99.99."],
+["De0GujDD8hv","O","Blink launches five new cameras","Including its first 4K model and long-range cameras, from $49.99."],
+["Dexi2Ouk400","O","Snap Specs x Iron Man","Robert Downey Jr. joins Snap Specs as honorary chief customer experience officer."],
+["Dew8ZZHE1lP","S","Apple caps iPhone Duo at 2 per customer","New orders show January 2027 delivery, while scalpers list it above $5,000."],
+["Deu9PEwifZQ","S","Redmi K100 official: a 10,000mAh battery phone","The biggest battery ever on a Xiaomi phone, with 100W charging."],
+["DesYajxjhQ6","O","A $5,899 MP3 player. In 2026.","Sony's Signature Series Walkman with a gold-plated copper chassis."],
+["DeqOtCbj7bs","A","Meet Mobo: AiMOGA home-companion humanoid robot","Chery's robotics arm built a robot whose AI plans your chores on its own."],
+["DemYN1AiXsV","O","Snap Specs AR glasses start shipping","The $2,195 AI-native glasses ship to US, UK and France pre-order customers."]
+];
+const SHORTS=[
+["UadKiZ27GZM","O","Bambu Lab H3C: 9-Tool 3D Printer Verdict"],
+["QGJDoD1mDvc","O","Addmotor Cybergen Exoskeletons Launch in the US"],
+["WjKMlrFVP_w","S","RedMagic 12 Pro Global Launch: 185Hz Gaming Phone"],
+["WkZ7bwhQhao","L","Asus ProArt P16 and P14 RTX Spark Laptops"],
+["zCPHhKk_iRk","O","Jackery Explorer 100D: 158W Palm-Sized Power Station"],
+["UIzeJvEInXc","S","Samsung Galaxy S25 FE Verdict: Buy at Deal Price"],
+["__-Oi5DPvjQ","O","Sony FX5 Cinema Camera: 5K Open Gate 16-bit RAW"],
+["mwPrH_9pX6U","O","Raspberry Pi 5 16GB Price Jumps $80"],
+["cUzFxO3GOLM","O","Sennheiser Momentum 5 Verdict: 57-Hour Battery"],
+["rbxBrm5cLJY","O","Audio-Technica ATH-M50xSTS-WL StreamSet: first wireless streaming headset, $299"],
+["LLiJx_hkrAQ","O","Sony Prism Collection: PS5 controllers in Flare Orange, Emerald Green and Graphite Gray"],
+["am7feP7Iej0","O","Logitech MX Master 4 Developer Edition launches in India at ₹20,699"],
+["W1_DgQJ1EzU","L","Apple unveils first touchscreen MacBook Pro with PROLED XDR Display"],
+["byUzfY1mjAU","O","GravaStar Mercury Edge Pro gaming headset: 138-hour battery"],
+["KCQZzF2KEYk","O","Fujifilm Instax Mini Evo 2 Launches End of November for $289.95"],
+["n8xQbiUeZK4","S","Google Pixel 11 Pro Fold Drops $250 to $1,649 in Early Black Friday Sale"],
+["Njz_6WZjiuc","A","Samsung Galaxy Glasses Reportedly Land in Mid-December"],
+["ROQ9kDwPfxU","O","Bose Lifestyle Ultra Speaker Drops to $279 in Early Black Friday Deal"],
+["ekn_fqRyCf8","O","Wyze Bulb Cam Pan Color: 2.5K Camera and Smart Bulb in One Socket"],
+["rk02JG-zhxk","O","Samsung Galaxy Fit 4 Leaks: Taller Screen, 12 Tiles, No Built-In GPS"],
+["op0XeGJY5UQ","L","Microsoft Surface Laptop 13 2nd Edition: Snapdragon X2 Plus Chip"],
+["JOnBtwVEbMM","O","Apple AirPods Pro 3 Drops to $199 at Amazon in Early Black Friday Sale"],
+["s3XkZ1x1FP0","S","Nothing OS 5.0 (Android 17) Stable Rollout Reaches Phone 3a, 3a Pro, 4a, 4a Pro"],
+["FelmUvwVkOU","O","Apple HomePod mini 2 Goes on Sale for $99: S10 Chip, Sound Glow Top"],
+["gaHRSqhvadE","S","Nothing Promises Over 6 Phones in 2027"],
+["KJ3-UCcGJ3E","L","Lenovo IdeaPad Slim 3i Price Cut in Half: $1,049 to $499"],
+["ZMsgbPIBB1c","O","Casio LA680WEM Vintage Watches Land in the US: 5-Year Battery"],
+["RAwj65cfQso","S","Google Pixel 11 Falls $200 to $699 in Early Black Friday Sale"],
+["lL_AHJsrjwk","O","Fujifilm Instax Square 2 Ships Now: Mood Filter Switch"],
+["EeejEcq6ZeM","L","Asus ExpertBook A7 Drops $400 in the US: 120Hz OLED, 26-Hour Battery"],
+["u4tUeVJgEU8","O","Apple Watch Ultra 4 Drops $100 to $699.99 in Early Black Friday Deal"],
+["cjf5kHXWww0","S","Google Pixel 11 Pro XL Drops $350 to $949 in Early Black Friday Sale"],
+["NG2qdHb9sus","O","Evercade Nexus Goes on Sale With Banjo-Kazooie in the Box"],
+["rP_1BEZ55_8","O","Apple AirTag 2 4-Pack Hits Lowest Price Ever"],
+["B1LZqzSh6dI","O","Ultrahuman Ring Pro Hits US Stores: 15 Days Battery, No Monthly Fees"],
+["pQqXB0KjTCM","O","Nintendo Switch 2 Zelda 40th Anniversary Edition Sells Out at $519.99"],
+["n3pWnnuXJJ4","O","Binance Hacked for $6.3 Billion: Biggest Theft in History"],
+["IODvdZ07ohQ","O","Tesla Roadster: $50,000 to Reserve It, Still No Car"],
+["8Wkhj2aJNpM","A","Parents Sue OpenAI Over Alleged ChatGPT Medication Advice, Per TechCrunch"],
+["o9Oh_chJCi4","A","Genie 4 Worlds Talk Back: Google AI Builds Places You Walk Through"],
+["mVnyxgN_xYc","S","iOS 27.2 Is Out: 130+ Security Fixes, Siri Learns 5 Languages"],
+["m7Zl5l8ZAbQ","O","Amazon's $199.99 Alexa Photo Frame Picks Your Smiling Photos"],
+["A5v0Hjii-PQ","L","Steve Jobs Said a Touchscreen Mac Would Fail. Apple Sells One Now."],
+["ZluMGNCJcpk","A","Anthropic's $2 Trillion IPO Filing Warns Its Own AI Could Blackmail"],
+["Wlzqxs-bTHU","O","REDMI Clip Neo: Redmi First Clip-On Earbuds"],
+["KuX0VhjV2sA","O","LG 115-Inch QNED evo TV: 4K Mini LED, 120Hz"],
+["XcRYiPoeH2U","L","ASUS Vivobook S14 and S16: 30-Hour Battery"],
+["Cp5q_XaKruE","O","Amazon Echo Show 16 Leads Five New Echo Devices"],
+["L5Q2TYOp0To","O","Alienware AW3226Q: 32-inch 4K OLED Monitor, $699"],
+["_nzG4Z0TAHY","S","Samsung Galaxy A08: 6 Years of Updates, No 5G"],
+["l9fSIOg8kAo","L","REDMI Book 14 2027 vs Book 16 2027"],
+["dYU_uSJt5pA","S","Moto G47 Power: 7,000mAh Battery, 108MP Camera"],
+["IjAw7Sf8l00","S","iPhone Duo FAILS JerryRigEverything durability test"],
+["DYLfdOz3Ppg","L","Anduril and Qualcomm unveil BlueChip, a rugged US-built laptop"],
+["cf-d278R3yY","L","Asus Zenbook 14 (2026) India launch date is November 5"],
+["SpEuaWKSBgM","O","Samsung Galaxy Buds On go on sale in Korea at $225"],
+["8aT1J1g03Jc","O","Twelve South AirFly View launches at $79.99"],
+["srrUVQn3ARY","L","Apple drops M6 into MacBook Pro and iMac"],
+["odHyxwyFANg","A","Brilliant Labs Halo Glasses launch at $399"],
+["S8e1SsibzpA","O","Google Fitbit Edge hits stores for $179.99"],
+["NnoTLEVew_U","O","Xiaomi Smart Band 11 lands in Europe at 59.99 euros"],
+["-t0Gv4ApLF8","S","POCO X8s goes global at $399"],
+["rzNSS-c3EuI","O","Alloop Trio — One Sensor, Two Bodies"],
+["DGf-x3kH2Jw","S","Samsung Galaxy W27 — Luxury Gold and Blue Foldable"],
+["4V_3Bitmg-I","S","Apple Caps iPhone Duo at 2 Per Customer"],
+["eWqljRXLKlE","O","PlayStation Pulse Gets a Launch Date — $99.99, Nov 19"],
+["UvWR3xqMAvM","A","NVIDIA DGX Spark Verdict — You Do Not Need $4,999 for AI"],
+["qA3eR0EzpRw","O","A Real Xenon Flash for iPhone — Godox A2 $84.90"],
+["raGq_svFinI","O","Anker AeroClip 2 — 6.2g Clip-On Buds"],
+["uKjbIFsaxWY","O","New Fire TV Stick 4K — $59.99 With Vega OS"],
+["N21PzN2Dq7o","A","Realbotix Echo Humanoid Robot Line Is Here"],
+["x_0HYCGFa10","O","New iPad Mini OLED Is Here — A20 Pro From $699"]
+];
+
+const CATS=[["ai","A","AI",'<path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/>'],
+ ["smartphones","S","Smartphones",'<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>'],
+ ["laptops","L","Laptops",'<rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/>'],
+ ["others","O","Others",'<circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/>']];
+const CATNAME={A:"AI",S:"Smartphones",L:"Laptops",O:"Others"};
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const items=k=>[...NEWS.filter(n=>n[1]===k).map(n=>({p:"ig",id:n[0],t:n[2],d:n[3]})),...SHORTS.filter(n=>n[1]===k).map(n=>({p:"yt",id:n[0],t:n[2],d:""}))];
+const cnt=(k,p)=>(p==="ig"?NEWS:SHORTS).filter(n=>n[1]===k).length;
+document.getElementById('cats').innerHTML=CATS.map(([slug,k,name,ic])=>`<a class="cat" href="#cat-${slug}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ic}</svg>${name}</a>`).join('');
+const sw=document.getElementById('bswitch');
+sw.innerHTML=CATS.map(([slug,k,name,ic])=>`<a href="#cat-${slug}" data-k="${slug}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ic}</svg>${name}</a>`).join('');
+function card(x){const ig=x.p==="ig";const url=ig?`https://www.instagram.com/_nerdzero_/reel/${x.id}/`:`https://www.youtube.com/shorts/${x.id}`;
+ return `<a class="rc" href="${url}" target="_blank" rel="noopener"><span class="src"><span class="pf ${x.p}">${ig?"Instagram Reel":"YouTube Short"}</span></span><h3>${esc(x.t)}</h3><p>${esc(x.d)}</p><span class="w"><i>↗</i>${ig?"Watch on Instagram":"Watch on YouTube"}</span></a>`}
+function route(keep){
+  const m=location.hash.match(/^#cat-([a-z]+)$/);const v=document.getElementById('bview');const c=CATS.find(c=>m&&c[0]===m[1]);
+  if(c){const [slug,k,name]=c;const list=items(k);
+    document.body.classList.add('brandmode');v.hidden=false;
+    document.getElementById('bname').textContent=name;
+    document.getElementById('bcount').textContent=`${cnt(k,"ig")} Instagram reels · ${cnt(k,"yt")} YouTube Shorts`;
+    sw.querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.k===slug));
+    document.getElementById('bgrid').innerHTML=list.filter(x=>x.p==='ig').map(card).join('');document.getElementById('ygrid').innerHTML=list.filter(x=>x.p==='yt').map(card).join('');
+    if(!keep)scrollTo(0,0);
+  }else{document.body.classList.remove('brandmode');v.hidden=true;
+    if(location.hash==='#cover'){const el=document.getElementById('cover');if(el)setTimeout(()=>el.scrollIntoView(),0);}}
+}
+addEventListener('hashchange',()=>route(false));route(false);
+</script>
+</body>
+</html>
