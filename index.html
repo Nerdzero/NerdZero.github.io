@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NerdZero — Tech news in 30 seconds</title>
 <meta name="description" content="NerdZero: tech news in 30 seconds. Phones, laptops, AI and gadgets — every launch, leak and price drop, as daily reels on Instagram and Shorts on YouTube.">
-<meta name="theme-color" content="#06070b">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2306070b'/%3E%3Cpath d='M21.5 8.5a9 9 0 1 1-11 0' fill='none' stroke='%233fe8ee' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 5v9' stroke='%233fe8ee' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#fcfdfd">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ffffff'/%3E%3Cpath d='M21.5 8.5a9 9 0 1 1-11 0' fill='none' stroke='%233fe8ee' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 5v9' stroke='%233fe8ee' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nerdzero.github.io/">
 <meta property="og:image" content="https://nerdzero.github.io/brand_logo.jpg">
@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#06070b; --ink:#f2f8f9; --dim:rgba(242,248,249,.62); --faint:rgba(242,248,249,.38);
+  --bg:#fcfdfd; --ink:#07090c; --dim:rgba(7,9,12,.62); --faint:rgba(7,9,12,.38);
   --cyan:#3fe8ee; --glow:#6ffbfc; --deep:#0aa3b0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -34,8 +34,8 @@ a{color:inherit;text-decoration:none}
 .wrap{position:relative;min-height:100vh;overflow:hidden}
 .glow{position:absolute;inset:0;pointer-events:none;z-index:0}
 .glow i{position:absolute;border-radius:50%;filter:blur(120px)}
-.glow i:nth-child(1){width:780px;height:520px;left:-260px;top:-260px;background:#3fe8ee;opacity:.22}
-.glow i:nth-child(2){width:560px;height:420px;left:-80px;top:-120px;background:#0aa3b0;opacity:.28;filter:blur(90px)}
+.glow i:nth-child(1){width:780px;height:520px;left:-260px;top:-260px;background:#3fe8ee;opacity:.16}
+.glow i:nth-child(2){width:560px;height:420px;left:-80px;top:-120px;background:#0aa3b0;opacity:.16;filter:blur(90px)}
 .glow i:nth-child(3){width:340px;height:260px;left:120px;top:-60px;background:#6ffbfc;opacity:.12;filter:blur(70px)}
 .grain{position:absolute;inset:0;z-index:0;opacity:.035;pointer-events:none;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
@@ -45,15 +45,15 @@ a{color:inherit;text-decoration:none}
 /* liquid glass navbar */
 .navwrap{position:sticky;top:30px;z-index:50;display:flex;justify-content:center;pointer-events:none}
 nav{pointer-events:auto;width:fit-content;display:flex;align-items:center;gap:40px;padding:10px 10px 10px 22px;
-  background:rgba(255,255,255,.06);backdrop-filter:blur(50px) saturate(140%);-webkit-backdrop-filter:blur(50px) saturate(140%);
-  border:1px solid rgba(255,255,255,.12);border-radius:16px;
-  box-shadow:inset 0 4px 4px 0 rgba(255,255,255,.08),0 10px 40px -10px rgba(0,0,0,.6)}
-.logo img{height:26px;display:block}
+  background:rgba(255,255,255,.6);backdrop-filter:blur(50px) saturate(140%);-webkit-backdrop-filter:blur(50px) saturate(140%);
+  border:1px solid rgba(7,9,12,.1);border-radius:16px;
+  box-shadow:inset 0 4px 4px 0 rgba(255,255,255,.5),0 10px 40px -10px rgba(15,40,50,.25)}
+.logo img{height:26px;display:block;filter:invert(1) hue-rotate(180deg)}
 .links{display:flex;gap:30px;font:500 14px/1 "Inter";color:var(--dim)}
 .links a{transition:color .2s}.links a:hover{color:var(--ink)}
 .navbtns{display:flex;gap:8px}
 .glassbtn{display:inline-flex;align-items:center;gap:10px;padding:10px 12px 10px 16px;border-radius:12px;font:500 14px/1 "Inter";
-  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 4px 4px 0 rgba(255,255,255,.1);
+  background:rgba(255,255,255,.55);border:1px solid rgba(7,9,12,.12);box-shadow:inset 0 4px 4px 0 rgba(255,255,255,.5);
   transition:background .25s,transform .25s}
 .glassbtn:hover{background:rgba(63,232,238,.14);transform:scale(1.02)}
 .glassbtn svg{width:16px;height:16px}
@@ -62,12 +62,12 @@ nav{pointer-events:auto;width:fit-content;display:flex;align-items:center;gap:40
 .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;min-height:calc(100vh - 220px);padding-top:90px}
 .left{max-width:640px}
 .badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 10px;border-radius:999px;font:500 14px/1 "Inter";color:var(--dim);
-  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 2px 3px rgba(255,255,255,.06)}
+  background:rgba(255,255,255,.55);border:1px solid rgba(7,9,12,.1);box-shadow:inset 0 2px 3px rgba(255,255,255,.5)}
 .badge .live{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 0 rgba(63,232,238,.6);animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,232,238,.55)}70%{box-shadow:0 0 0 9px rgba(63,232,238,0)}100%{box-shadow:0 0 0 0 rgba(63,232,238,0)}}
 .badge b{color:var(--ink);font-weight:600}
 h1{margin-top:28px;font:700 75px/1.05 "Fustat",sans-serif;letter-spacing:-2px}
-h1 span{background:linear-gradient(92deg,#6ffbfc,#3fe8ee 45%,#0aa3b0);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 span{background:linear-gradient(92deg,#12b5c4,#0aa3b0 45%,#07707e);-webkit-background-clip:text;background-clip:text;color:transparent}
 .sub{margin-top:26px;max-width:520px;font:400 18px/1.5 "Inter";letter-spacing:-1px;color:var(--dim)}
 .ctas{margin-top:40px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .cta{display:inline-flex;align-items:center;gap:14px;padding:8px 8px 8px 24px;border-radius:16px;font:600 16px/1 "Inter";color:#03161a;
@@ -90,42 +90,42 @@ h1 span{background:linear-gradient(92deg,#6ffbfc,#3fe8ee 45%,#0aa3b0);-webkit-ba
 .trusted p{font:500 14px/1 "Inter";color:var(--faint)}
 .brands{margin-top:30px;display:flex;justify-content:center;align-items:center;gap:100px;flex-wrap:wrap;row-gap:28px}
 .brands{display:grid!important;grid-template-columns:repeat(5,auto);justify-content:center;column-gap:100px}
-.brands .b{font:700 24px/1 "Fustat";letter-spacing:-.5px;color:rgba(242,248,249,.42);filter:grayscale(1);transition:color .25s;display:flex;flex-direction:column;align-items:center;gap:8px}
-.brands em{font:500 11px/1 "Inter";font-style:normal;letter-spacing:.02em;color:rgba(242,248,249,.3)}
+.brands .b{font:700 24px/1 "Fustat";letter-spacing:-.5px;color:rgba(7,9,12,.45);filter:grayscale(1);transition:color .25s;display:flex;flex-direction:column;align-items:center;gap:8px}
+.brands em{font:500 11px/1 "Inter";font-style:normal;letter-spacing:.02em;color:rgba(7,9,12,.35)}
 .brands .b:hover em{color:var(--cyan)}
 .brands .b:hover{color:var(--ink)}
 
 
 
 .cats{margin-top:30px;display:flex;justify-content:center;align-items:center;gap:100px;flex-wrap:wrap;row-gap:24px}
-.cat{display:inline-flex;align-items:center;gap:12px;font:700 26px/1 "Fustat";letter-spacing:-.5px;color:rgba(242,248,249,.5);transition:color .25s}
+.cat{display:inline-flex;align-items:center;gap:12px;font:700 26px/1 "Fustat";letter-spacing:-.5px;color:rgba(7,9,12,.55);transition:color .25s}
 .cat svg{width:26px;height:26px;color:var(--cyan);opacity:.75;transition:opacity .25s}
 .cat:hover{color:var(--ink)}.cat:hover svg{opacity:1}
-.ptabs{display:inline-flex;margin:0 0 26px;border-radius:12px;padding:4px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+.ptabs{display:inline-flex;margin:0 0 26px;border-radius:12px;padding:4px;background:rgba(255,255,255,.55);border:1px solid rgba(7,9,12,.1)}
 .ptabs button{font:500 13px/1 "Inter";color:var(--dim);background:none;border:0;padding:10px 14px;border-radius:9px;cursor:pointer}
-.ptabs button.on{background:rgba(255,255,255,.1);color:var(--ink)}
+.ptabs button.on{background:rgba(7,9,12,.08);color:var(--ink)}
 .rc .src{display:flex;gap:8px;align-items:center}
-.rc .pf{font:600 11px/1 "Inter";letter-spacing:.04em;padding:5px 9px;border-radius:999px;color:var(--ink);background:rgba(255,255,255,.08)}
+.rc .pf{font:600 11px/1 "Inter";letter-spacing:.04em;padding:5px 9px;border-radius:999px;color:var(--ink);background:rgba(7,9,12,.06)}
 .rc .pf.yt{color:#ff6b6b;background:rgba(255,80,80,.12)}
 .rc .pf.ig{color:#f5a3ff;background:rgba(220,120,255,.12)}
 @media (max-width:1100px){.cats{gap:56px}}
 /* brand pages */
 .brands .b{cursor:pointer;text-decoration:none}
 .bview{position:relative;z-index:10;padding:150px 0 40px}
-.back{display:inline-flex;font:500 14px/1 "Inter";color:var(--dim);padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:color .2s}
+.back{display:inline-flex;font:500 14px/1 "Inter";color:var(--dim);padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.55);border:1px solid rgba(7,9,12,.1);transition:color .2s}
 .back:hover{color:var(--ink)}
 .bhead{margin-top:34px;display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}
 .bhead h2{font:700 75px/1.05 "Fustat";letter-spacing:-2px}
 .bhead p{font:500 16px/1 "Inter";color:var(--cyan)}
 .bswitch{margin:30px 0 10px;display:flex;flex-wrap:wrap;gap:16px 48px}
-.bswitch a{display:inline-flex;align-items:center;gap:10px;font:700 20px/1 "Fustat";letter-spacing:-.3px;color:rgba(242,248,249,.42);transition:color .2s}
+.bswitch a{display:inline-flex;align-items:center;gap:10px;font:700 20px/1 "Fustat";letter-spacing:-.3px;color:rgba(7,9,12,.45);transition:color .2s}
 .bswitch a svg{width:20px;height:20px;color:var(--cyan);opacity:.6}
 .bswitch a:hover{color:var(--ink)}
 .bswitch a.on{color:var(--ink)}.bswitch a.on svg{opacity:1}
 .sech{margin:44px 0 18px;font:600 13px/1 "Inter";letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
 .bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .rc{display:flex;flex-direction:column;gap:12px;padding:22px;border-radius:16px;min-height:220px;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 4px 4px rgba(255,255,255,.04);
+  background:rgba(255,255,255,.6);border:1px solid rgba(7,9,12,.1);box-shadow:inset 0 4px 4px rgba(255,255,255,.5);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,background .3s}
 .rc:hover{transform:translateY(-3px) scale(1.01);border-color:rgba(63,232,238,.45);background:rgba(63,232,238,.06)}
 .rc .k{align-self:flex-start;font:600 11px/1 "Inter";letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);padding:5px 9px;border-radius:999px;background:rgba(63,232,238,.1)}
